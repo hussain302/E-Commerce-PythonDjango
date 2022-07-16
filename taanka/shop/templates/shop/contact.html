@@ -1,0 +1,92 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %}Contact{% endblock %}
+
+
+  {% block body %}
+
+  <div class="container">
+
+<main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron" style ="background-color:rgba(255, 99, 71); color:white">
+        <div class="container">
+            <h1 class="display-5 text-center">CONTACT TAANKA OFFICIAL <i class="fa fa-phone-square"></i> </h1>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-md-8">
+        <form action="/shop/contact/" method="POST">
+            {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <label for="name" class="">Your name</label>
+
+                            <input type="text" id="name" name="name" placeholder="Eg: Hussain" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <label for="email" class="">Your email</label>
+                            <input type="text" placeholder="example@id.com" id="email" name="email" class="form-control">
+                        </div>
+                    </div>
+                </div>
+  <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <label for="subject" class="">Subject</label>
+
+                            <input type="text" id="subject" name="subject" placeholder="Enter Subject" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+<br>
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                          <label for="message">Your message</label>
+                          <textarea type="text" id="message" placeholder="Your message here.." name="message" rows="2" class="form-control md-textarea"></textarea>
+    <br>
+<div class="row ">
+                <button type="submit" class="ml-3 btn btn-lg btn-outline-danger"> Submit </button>
+              </div>    <br>
+    <br>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--Grid row-->
+
+            </form>
+      </div>
+      <div class="col-md-4">
+        //image here
+      </div>
+
+    </div>
+    </main>
+  </div>
+
+
+  {% endblock %}
+
+{% block js %}
+<script>
+{% if thank %}
+alert('Thanks For Contacting with us. Your Query has been submitted successfully!');
+document.location = '/'
+{% endif %}
+</script>
+{% endblock %}
